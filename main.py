@@ -5,7 +5,6 @@ import json
 from streamlit_option_menu import option_menu
 import pandas as pd
 st.set_page_config(page_title='Proyecto Integrador',page_icon=":brain:",initial_sidebar_state="collapsed")
-import requests
 import pickle
 
 
