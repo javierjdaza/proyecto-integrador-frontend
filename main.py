@@ -6,7 +6,7 @@ from streamlit_option_menu import option_menu
 import pandas as pd
 st.set_page_config(page_title='Proyecto Integrador',page_icon=":brain:",initial_sidebar_state="collapsed")
 import requests
-
+import pickle
 
 
 st.markdown("<h1 style='text-align: center; color: #000000;'>Proyecto Integrador </h1>", unsafe_allow_html=True)
@@ -47,9 +47,15 @@ if menu_selection == 'Prediccion':
                 'num_tasks' : num_tasks_slider,
                 'duration' : duration_slider,
             }
-            r = requests.post('http://127.0.0.1:8000/predict', json= data)
-            response = json.loads(r.content)
-            st.text(f"Cluster Predicho: {response['y_predict']}")
+            # r = requests.post('http://127.0.0.1:8000/predict', json= data)
+            # response = json.loads(r.content)
+            with open('./model/model.pkl', 'rb') as file: 
+                MODEL = pickle.load(file)
+            
+            y_predict = int(MODEL.predict(pd.DataFrame(data))[0])
+            y_predict_proba = float(MODEL.predict_proba(pd.DataFrame(data))[0][1])
+            
+            st.text(f"Cluster Predicho: {y_predict}")
             # st.text(f"{response['y_predict_proba']}")
 
 
