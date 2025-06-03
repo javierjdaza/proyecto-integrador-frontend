@@ -8,8 +8,8 @@ st.set_page_config(page_title='Proyecto Integrador',page_icon=":brain:",initial_
 import pickle
 
 
-st.markdown("<h1 style='text-align: center; color: #000000;'>Proyecto Integrador </h1>", unsafe_allow_html=True)
-st.markdown("<h3 style='text-align: center; color: #000000;'>Supervised vs Unsupervised Problem</h3>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: #000000;'>Proyecto Integrador</h1>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; color: #000000;'>Maestría en Ciencia de Datos y Analítica</h3>", unsafe_allow_html=True)
 st.write('---')
 menu_selection = option_menu(None, ["Prediccion", "The Team"], 
     icons=['robot', 'cup'], 
@@ -69,7 +69,7 @@ def get_prediction():
     return 'TODO'
 
 def put_img(name,role, img_file_name):
-    # st.image(f'./img/{img_file_name}.png', use_column_width=True)
+    st.image(f'./img/{img_file_name}.png', use_column_width=True)
     st.markdown(f"<h5 style='text-align: center; color: #000000;'>{name}<br>{role}</h5>", unsafe_allow_html=True)
 
 
@@ -77,9 +77,9 @@ if menu_selection == 'The Team':
     c1,c2,c3 = st.columns(3)
 
     with c1:
-        put_img('Javier Daza', 'Descripcion', '')
+        put_img('Javier Daza', 'Ingeniero Industrial', 'javier')
     with c2:
-        put_img('Maria Sofia Uribe', 'Descripcion', '')
+        put_img('Maria Sofia Uribe', 'Ingeniera Matematica', 'sofia')
     with c3:
-        put_img('Pablo Jimeno', 'Descripcion', '')
+        put_img('Pablo Jimeno', 'Descripcion', 'pablo')
 
