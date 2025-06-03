@@ -69,7 +69,7 @@ def get_prediction():
     return 'TODO'
 
 def put_img(name,role, img_file_name):
-    st.image(f'./{img_file_name}.png', use_column_width=True)
+    st.image(f'./{img_file_name}.png', use_container_width=True)
     st.markdown(f"<h5 style='text-align: center; color: #000000;'>{name}<br>{role}</h5>", unsafe_allow_html=True)
 
 
