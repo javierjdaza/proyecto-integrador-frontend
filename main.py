@@ -39,13 +39,13 @@ if menu_selection == 'Prediccion':
         predict_button = st.button('Prediccion',icon="🧠", use_container_width=True, type='tertiary')
         if predict_button:
             
-            data = {
+            data = [{
                 'project_priority' : project_priority_slider,
                 'avg_risk_exposure' : avg_risk_exposure_slider,
                 'total_headcount' : total_headcount_slider,
                 'num_tasks' : num_tasks_slider,
                 'duration' : duration_slider,
-            }
+            }]
             # r = requests.post('http://127.0.0.1:8000/predict', json= data)
             # response = json.loads(r.content)
             with open('./model/model.pkl', 'rb') as file: 
